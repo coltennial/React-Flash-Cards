@@ -1,14 +1,24 @@
 import React from "react";
 
 class CardsForm extends React.Component {
-  state = {frontText: ""};
-  state = {backText: ""};
+  state = {frontText: "", body: "" };
+
+  componentDidMount() {
+    if (this.props.id) {
+      const {frontText, backText} = this.props;
+      this.setState({ frontText, backText});
+    }
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.add(this.state);
-    this.setState({ frontText: ""});
-    this.setState({ backText: ""});
+    if (this.props.id) {
+      this.props.edit({ id: this.props.id, ...this.state });
+      this.props.toggleEdit();
+    } else {
+      this.props.addFunction(this.state);
+    }
+    this.setState({ frontText: "", backText: ""})
   };
 
   handleChange = (e) => {
@@ -18,7 +28,7 @@ class CardsForm extends React.Component {
   render () { 
     return ( 
       <form onSubmit={this.handleSubmit}>
-        <div>
+        <div id="form">
           <input
             label="Card Description (Front)"
             placeholder="(Front)"

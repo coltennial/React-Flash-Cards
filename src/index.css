@@ -1,45 +1,168 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
+
+* {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  max-width: 100%
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  width: 100%;
+  max-width: 100%;
+  background-color: #111;
+  color: white;
+  font-family: 'Arbutus Slab', serif;
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin: 5% auto;
+  text-align: center;
+  font-family: 'Lalezar', cursive;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #111;
+  border-bottom: 1px solid #eee;
+  margin: 0 auto;
+  width: 99%;
+  height: 100px;
+}
+
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Bungee', cursive;
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+
+.navlink:link {
+  color: #eee;
+}
+
+.navlink:visited {
+  color: #e9e;
+}
+
+.navlink:hover {
+  color: #dfd;
+}
+
+.navlink:active {
+  color: #ffa;
+}
+
+#navbar li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 200px;
+  height: 60%;
+  box-shadow: 3px 1px 18px #eee;
+  transition: 0.3s transform ease-in-out;
+}
+
+#navbar li:hover{
+  transform: scale(0.9);
+  border: 2px solid #eee;
+}
+
+
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  border: 5px solid #eee;
+  
+}
+
+#form input {
+  font-size: 1.5rem;
+  max-width: 350px;
+  height: 50px;
+  text-align: center;
+  border: 2px dashed #eee;
+  background-color: #333;
+  color: #eee;
+  font-family: 'Arbutus Slab', serif;
+
+}
+
+#form button {
+  font-size: 1rem;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  border: 2px solid #eee;
+  background-color: #33f;
+  color: white;
+  font-family: 'Arbutus Slab', serif;
+  transition: background-color 0.3s ease-out;
+}
+
+#form button:hover {
+  background-color: #1df;
+  color: black;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 #front-back {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  width: 90%;
-  height: 5rem;
-  border: 5px dashed #8f8;
-  margin: 10% auto;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 500px;
+  border: 3px solid #eee;
+  box-shadow: 3px 1px 18px #eee, -3px -1px 18px #eee;
 }
 
-#front-back button {
-  background-color: black;
-  color: white;
-  border: 2px solid #f55;
-  border-radius: 5px;
-  padding: 2%;
+#edit-del {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #eee;
+  margin-left: 5%;
+  width: 200px;
+  height: 50px;
 }
 
-#front-text {
-  border: 3px solid black;
-  padding: 1%;
-  border-radius: 5px;
+#edit-del button {
+  border: 2px solid #888;
+  width: 100px;
+  height: 50px;
+  font-family: 'Arbutus Slab', serif;
+  font-size: 1.1rem;
 }
 
-#back-text {
-  border: 3px solid black;
-  padding: 1%;
-  border-radius: 5px;
+#edit:hover {
+  background-color: #fa0;
 }
+
+#remove:hover {
+  background-color: #e11;
+}
+
