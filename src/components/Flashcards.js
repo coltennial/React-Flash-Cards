@@ -50,12 +50,9 @@ class Flashcards extends React.Component {
     return (
       <div>
         <h1> Flash Cards </h1>
-        <div>
-          <button onClick={this.toggleForm}>
-           *- Show Form -*
+        <button onClick={this.toggleForm} id="show-form">
+           Show Form
           </button>
-          
-        </div>
         {this.state.showForm ? <CardsForm addFunction={this.addCard} /> : null}
         { this.renderCards() }
       </div>

@@ -16,13 +16,14 @@ class Card extends React.Component {
           <div id="front-back">
             <p> {this.props.frontText} </p>
             <p> {this.props.backText} </p>
+            <div id="edit-del">
+              <button id="edit" onClick={this.toggleEdit}>Edit</button>
+            <button id="remove" onClick={() => this.props.remove(this.props.id)}>Remove</button>
+            </div>
           </div>
         }
 
-        <div id="edit-del">
-          <button id="edit" onClick={this.toggleEdit}>Edit</button>
-          <button id="remove" onClick={() => this.props.remove(this.props.id)}>Remove</button>
-        </div>
+        
       </section>
     )
   }
